@@ -40,8 +40,8 @@ Config 则直接在 KOA 实例中 app 挂载，
 ```js
 module.exports = app => {
   return {
-    "POST /ccapi/highlight_cut/create": app.controller.highlight.create,
-    "GET /ccapi/highlight_cut/result/:tid": app.controller.highlight.getResult,
+    "POST /api/create": app.controller.home.create,
+    "GET /api/result/:tid": app.controller.home.getResult,
   };
 };
 ```
@@ -50,7 +50,7 @@ module.exports = app => {
 controller 即暴露出的 API，需要在 controller 目录下定义。模块对应的文件名即 router 中使用的对象作用域。例如 `controller/highlight.js`
 ```js
 {
-  "POST /ccapi/highlight_cut/create": app.controller.highlight.create,
+  "POST /api/create": app.controller.home.create,
 }
 ```
 
