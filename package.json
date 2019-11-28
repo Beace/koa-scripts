@@ -1,0 +1,23 @@
+{
+  "name": "koa-scripts",
+  "version": "0.0.1",
+  "description": "CORE 文件作为该项目规范实现的核心文件，主要实现了启动时动态挂载 Controller，Service，Config。以后如果可以的话，会导出为一个 npm package 来使用。",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "BeAce <beaceshimin@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/koa": "^2.11.0",
+    "@types/koa-router": "^7.0.42",
+    "@types/node": "^12.12.14",
+    "koa": "^2.11.0",
+    "koa-router": "^7.4.0"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
