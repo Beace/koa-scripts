@@ -5,7 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint --ext .ts src/"
   },
   "keywords": [],
   "author": "BeAce <beaceshimin@gmail.com>",
@@ -14,8 +15,12 @@
     "@types/koa": "^2.11.0",
     "@types/koa-router": "^7.0.42",
     "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "eslint": "^6.7.1",
     "koa": "^2.11.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "colors": "^1.4.0"
