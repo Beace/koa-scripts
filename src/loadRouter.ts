@@ -36,7 +36,7 @@ const setRouters = (app: App) => {
     const methodLowerCase = method.toLocaleLowerCase();
     KoaRouter[methodLowerCase as Methods](path, (ctx: Context) => {
       ctx.log = log;
-      routers[key](ctx, serviceMap, app)
+      return routers[key](ctx, serviceMap, app)
     });
   });
 
