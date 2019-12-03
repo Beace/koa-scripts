@@ -1,6 +1,6 @@
 import path from 'path';
 import loader from './loader';
-import { Config } from './interfaces/App';
+import { Config } from './index.d';
 import log from './log';
 
 function loadConfig() {
