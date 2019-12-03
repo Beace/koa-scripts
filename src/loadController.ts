@@ -1,6 +1,6 @@
 import path from "path";
 import loader from "./loader";
-import { App } from "./index.d";
+import { App } from "../index.d";
 
 function loadController() {
   const controllerPath = path.resolve('src/controller');

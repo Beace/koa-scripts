@@ -1,5 +1,5 @@
 import fs from "fs";
-import { Config } from "./index.d";
+import { Config } from "../index.d";
 
 function loader(dirPath: string): Config[] {
   const dir = fs.readdirSync(dirPath);

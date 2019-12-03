@@ -5,7 +5,7 @@ import loadService from "./loadService";
 import loadConfig from "./loadConfig";
 import log from './log';
 
-import { App, Service, Context } from "./index.d";
+import { App, Service, Context } from "../index.d";
 const KoaRouter = new router();
 const services = loadService();
 
