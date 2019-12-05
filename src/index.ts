@@ -1,7 +1,2 @@
-import loadController from "./loadController";
-import loadRouter from './loadRouter';
-
-export default {
-  loadController,
-  loadRouter,
-}
+export { default as loadController } from  './loadController';
+export { default as loadRouter } from './loadRouter';
