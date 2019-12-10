@@ -1,4 +1,6 @@
 import path from "path";
+import _ from "lodash";
+
 import loader from "./loader";
 import { App } from "../index.d";
 
@@ -9,10 +11,9 @@ function loadController() {
 
 function bindControllers2KOAPrototype(koa: App) {
   const controllers = loadController();
-  koa.prototype["controller"] = {};
-  controllers.forEach(ctrl => {
-    koa.prototype.controller[ctrl.name] = ctrl.module;
-  });
+  const controller = {};
+  controllers.forEach(ctrl => _.set(controller, ctrl.name, ctrl.module));
+  koa.prototype.controller = controller;
 }
 
 export default bindControllers2KOAPrototype;

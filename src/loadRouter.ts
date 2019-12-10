@@ -5,9 +5,8 @@ import loadService from "./loadService";
 import loadConfig from "./loadConfig";
 import log from './log';
 
-import { App, Service, Context } from "../index.d";
+import { App, Context } from "../index.d";
 const KoaRouter = new router();
-const services = loadService();
 
 enum Methods {
   GET = "get",
@@ -19,11 +18,8 @@ enum Methods {
 const setRouters = (app: App) => {
   log.info("====================KOA-SCRIPTS-START=======================");
   const routers = require(path.resolve("src/router"))(app);
-  const serviceMap: Service = {};
   log.info("开始读取 services...");
-  services.forEach(service => {
-    serviceMap[service.name] = service.module;
-  });
+  const serviceMap = loadService();
 
   // mount config on app
   const config = loadConfig();
@@ -34,10 +30,15 @@ const setRouters = (app: App) => {
   Object.keys(routers).forEach(key => {
     const [method, path] = key.split(" ");
     const methodLowerCase = method.toLocaleLowerCase();
-    KoaRouter[methodLowerCase as Methods](path, (ctx: Context) => {
-      ctx.log = log;
-      return routers[key](ctx, serviceMap, app)
-    });
+    try {
+      KoaRouter[methodLowerCase as Methods](path, (ctx: Context) => {
+        ctx.log = log;
+        return routers[key](ctx, serviceMap, app)
+      });
+    } catch (e) {
+      console.log(e)
+      return {}
+    }
   });
 
   log.info("路由注册完成");

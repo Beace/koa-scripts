@@ -1,14 +1,14 @@
-import colors from 'colors';
+import colors from "colors";
 
 enum LogLevel {
-  INFO = 'INFO',
-  WARN = 'WARN',
-  ERROR = 'ERROR'
+  INFO = "INFO",
+  WARN = "WARN",
+  ERROR = "ERROR",
 }
 class Log {
   prefix: string;
   constructor() {
-    this.prefix = 'KS';
+    this.prefix = "KS";
   }
   private getDateTime(): string {
     return new Date().toLocaleString("ca", {

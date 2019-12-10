@@ -1,2 +1,2 @@
-export { default as loadController } from  './loadController';
-export { default as loadRouter } from './loadRouter';
+export { default as loadController } from "./loadController";
+export { default as loadRouter } from "./loadRouter";
